@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class manpage_gui
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -34,19 +34,19 @@ Partial Class manpage_gui
         Me.searchText = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.CmdTextArea = New System.Windows.Forms.TabControl()
-        Me.SummaryTab = New System.Windows.Forms.TabPage()
-        Me.DetailsTab = New System.Windows.Forms.TabPage()
-        Me.TextSizeSlider = New System.Windows.Forms.TrackBar()
-        Me.Credits = New System.Windows.Forms.TextBox()
-        Me.cmdNameBox = New System.Windows.Forms.TextBox()
-        Me.summaryTextBox = New System.Windows.Forms.TextBox()
-        Me.backBtn = New System.Windows.Forms.Button()
+        Me.DescriptionTab = New System.Windows.Forms.TabPage()
         Me.backBtn2 = New System.Windows.Forms.Button()
         Me.detailsTextBox = New System.Windows.Forms.TextBox()
         Me.cmdNameBox2 = New System.Windows.Forms.TextBox()
+        Me.UsageTab = New System.Windows.Forms.TabPage()
+        Me.backBtn = New System.Windows.Forms.Button()
+        Me.summaryTextBox = New System.Windows.Forms.TextBox()
+        Me.cmdNameBox = New System.Windows.Forms.TextBox()
+        Me.TextSizeSlider = New System.Windows.Forms.TrackBar()
+        Me.Credits = New System.Windows.Forms.TextBox()
         Me.CmdTextArea.SuspendLayout()
-        Me.SummaryTab.SuspendLayout()
-        Me.DetailsTab.SuspendLayout()
+        Me.DescriptionTab.SuspendLayout()
+        Me.UsageTab.SuspendLayout()
         CType(Me.TextSizeSlider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,8 +111,8 @@ Partial Class manpage_gui
         'CmdTextArea
         '
         Me.CmdTextArea.Alignment = System.Windows.Forms.TabAlignment.Bottom
-        Me.CmdTextArea.Controls.Add(Me.SummaryTab)
-        Me.CmdTextArea.Controls.Add(Me.DetailsTab)
+        Me.CmdTextArea.Controls.Add(Me.DescriptionTab)
+        Me.CmdTextArea.Controls.Add(Me.UsageTab)
         Me.CmdTextArea.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmdTextArea.Location = New System.Drawing.Point(12, 93)
         Me.CmdTextArea.Multiline = True
@@ -122,84 +122,18 @@ Partial Class manpage_gui
         Me.CmdTextArea.Size = New System.Drawing.Size(651, 548)
         Me.CmdTextArea.TabIndex = 4
         '
-        'SummaryTab
+        'DescriptionTab
         '
-        Me.SummaryTab.Controls.Add(Me.backBtn)
-        Me.SummaryTab.Controls.Add(Me.summaryTextBox)
-        Me.SummaryTab.Controls.Add(Me.cmdNameBox)
-        Me.SummaryTab.Location = New System.Drawing.Point(4, 4)
-        Me.SummaryTab.Name = "SummaryTab"
-        Me.SummaryTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.SummaryTab.Size = New System.Drawing.Size(643, 520)
-        Me.SummaryTab.TabIndex = 0
-        Me.SummaryTab.Text = "Summary"
-        Me.SummaryTab.UseVisualStyleBackColor = True
-        '
-        'DetailsTab
-        '
-        Me.DetailsTab.Controls.Add(Me.backBtn2)
-        Me.DetailsTab.Controls.Add(Me.detailsTextBox)
-        Me.DetailsTab.Controls.Add(Me.cmdNameBox2)
-        Me.DetailsTab.Location = New System.Drawing.Point(4, 4)
-        Me.DetailsTab.Name = "DetailsTab"
-        Me.DetailsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.DetailsTab.Size = New System.Drawing.Size(643, 520)
-        Me.DetailsTab.TabIndex = 1
-        Me.DetailsTab.Text = "Details"
-        Me.DetailsTab.UseVisualStyleBackColor = True
-        '
-        'TextSizeSlider
-        '
-        Me.TextSizeSlider.BackColor = System.Drawing.Color.Black
-        Me.TextSizeSlider.LargeChange = 2
-        Me.TextSizeSlider.Location = New System.Drawing.Point(424, 622)
-        Me.TextSizeSlider.Maximum = 2
-        Me.TextSizeSlider.Name = "TextSizeSlider"
-        Me.TextSizeSlider.Size = New System.Drawing.Size(218, 56)
-        Me.TextSizeSlider.TabIndex = 0
-        '
-        'Credits
-        '
-        Me.Credits.BackColor = System.Drawing.Color.Black
-        Me.Credits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Credits.ForeColor = System.Drawing.Color.White
-        Me.Credits.Location = New System.Drawing.Point(483, 32)
-        Me.Credits.Name = "Credits"
-        Me.Credits.ReadOnly = True
-        Me.Credits.Size = New System.Drawing.Size(176, 30)
-        Me.Credits.TabIndex = 5
-        Me.Credits.Text = "(c) 2016 Tanuj Sane" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'cmdNameBox
-        '
-        Me.cmdNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.cmdNameBox.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNameBox.Location = New System.Drawing.Point(6, 6)
-        Me.cmdNameBox.Name = "cmdNameBox"
-        Me.cmdNameBox.Size = New System.Drawing.Size(538, 32)
-        Me.cmdNameBox.TabIndex = 0
-        '
-        'summaryTextBox
-        '
-        Me.summaryTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.summaryTextBox.Location = New System.Drawing.Point(0, 46)
-        Me.summaryTextBox.Multiline = True
-        Me.summaryTextBox.Name = "summaryTextBox"
-        Me.summaryTextBox.Size = New System.Drawing.Size(643, 474)
-        Me.summaryTextBox.TabIndex = 1
-        Me.summaryTextBox.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'backBtn
-        '
-        Me.backBtn.BackColor = System.Drawing.Color.White
-        Me.backBtn.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.backBtn.ForeColor = System.Drawing.Color.Black
-        Me.backBtn.Location = New System.Drawing.Point(550, 10)
-        Me.backBtn.Name = "backBtn"
-        Me.backBtn.Size = New System.Drawing.Size(76, 28)
-        Me.backBtn.TabIndex = 6
-        Me.backBtn.Text = "< Back"
-        Me.backBtn.UseVisualStyleBackColor = False
+        Me.DescriptionTab.Controls.Add(Me.backBtn2)
+        Me.DescriptionTab.Controls.Add(Me.detailsTextBox)
+        Me.DescriptionTab.Controls.Add(Me.cmdNameBox2)
+        Me.DescriptionTab.Location = New System.Drawing.Point(4, 4)
+        Me.DescriptionTab.Name = "DescriptionTab"
+        Me.DescriptionTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.DescriptionTab.Size = New System.Drawing.Size(643, 520)
+        Me.DescriptionTab.TabIndex = 1
+        Me.DescriptionTab.Text = "Description"
+        Me.DescriptionTab.UseVisualStyleBackColor = True
         '
         'backBtn2
         '
@@ -232,7 +166,73 @@ Partial Class manpage_gui
         Me.cmdNameBox2.Size = New System.Drawing.Size(538, 32)
         Me.cmdNameBox2.TabIndex = 7
         '
-        'manpage_gui
+        'UsageTab
+        '
+        Me.UsageTab.Controls.Add(Me.backBtn)
+        Me.UsageTab.Controls.Add(Me.summaryTextBox)
+        Me.UsageTab.Controls.Add(Me.cmdNameBox)
+        Me.UsageTab.Location = New System.Drawing.Point(4, 4)
+        Me.UsageTab.Name = "UsageTab"
+        Me.UsageTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.UsageTab.Size = New System.Drawing.Size(643, 520)
+        Me.UsageTab.TabIndex = 0
+        Me.UsageTab.Text = "Usage"
+        Me.UsageTab.UseVisualStyleBackColor = True
+        '
+        'backBtn
+        '
+        Me.backBtn.BackColor = System.Drawing.Color.White
+        Me.backBtn.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.backBtn.ForeColor = System.Drawing.Color.Black
+        Me.backBtn.Location = New System.Drawing.Point(550, 10)
+        Me.backBtn.Name = "backBtn"
+        Me.backBtn.Size = New System.Drawing.Size(76, 28)
+        Me.backBtn.TabIndex = 6
+        Me.backBtn.Text = "< Back"
+        Me.backBtn.UseVisualStyleBackColor = False
+        '
+        'summaryTextBox
+        '
+        Me.summaryTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.summaryTextBox.Location = New System.Drawing.Point(0, 46)
+        Me.summaryTextBox.Multiline = True
+        Me.summaryTextBox.Name = "summaryTextBox"
+        Me.summaryTextBox.Size = New System.Drawing.Size(643, 474)
+        Me.summaryTextBox.TabIndex = 1
+        Me.summaryTextBox.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'cmdNameBox
+        '
+        Me.cmdNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.cmdNameBox.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNameBox.Location = New System.Drawing.Point(6, 6)
+        Me.cmdNameBox.Name = "cmdNameBox"
+        Me.cmdNameBox.Size = New System.Drawing.Size(538, 32)
+        Me.cmdNameBox.TabIndex = 0
+        '
+        'TextSizeSlider
+        '
+        Me.TextSizeSlider.BackColor = System.Drawing.Color.Black
+        Me.TextSizeSlider.LargeChange = 2
+        Me.TextSizeSlider.Location = New System.Drawing.Point(424, 622)
+        Me.TextSizeSlider.Maximum = 2
+        Me.TextSizeSlider.Name = "TextSizeSlider"
+        Me.TextSizeSlider.Size = New System.Drawing.Size(218, 56)
+        Me.TextSizeSlider.TabIndex = 0
+        '
+        'Credits
+        '
+        Me.Credits.BackColor = System.Drawing.Color.Black
+        Me.Credits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Credits.ForeColor = System.Drawing.Color.White
+        Me.Credits.Location = New System.Drawing.Point(483, 32)
+        Me.Credits.Name = "Credits"
+        Me.Credits.ReadOnly = True
+        Me.Credits.Size = New System.Drawing.Size(176, 30)
+        Me.Credits.TabIndex = 5
+        Me.Credits.Text = "(c) 2016 Tanuj Sane" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -245,13 +245,13 @@ Partial Class manpage_gui
         Me.Controls.Add(Me.searchText)
         Me.Controls.Add(Me.CmdDirectory)
         Me.Controls.Add(Me.Title)
-        Me.Name = "manpage_gui"
+        Me.Name = "Form1"
         Me.Text = "UNIX Man Pages"
         Me.CmdTextArea.ResumeLayout(False)
-        Me.SummaryTab.ResumeLayout(False)
-        Me.SummaryTab.PerformLayout()
-        Me.DetailsTab.ResumeLayout(False)
-        Me.DetailsTab.PerformLayout()
+        Me.DescriptionTab.ResumeLayout(False)
+        Me.DescriptionTab.PerformLayout()
+        Me.UsageTab.ResumeLayout(False)
+        Me.UsageTab.PerformLayout()
         CType(Me.TextSizeSlider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -263,8 +263,8 @@ Partial Class manpage_gui
     Friend WithEvents searchText As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents CmdTextArea As TabControl
-    Friend WithEvents SummaryTab As TabPage
-    Friend WithEvents DetailsTab As TabPage
+    Friend WithEvents UsageTab As TabPage
+    Friend WithEvents DescriptionTab As TabPage
     Friend WithEvents TextSizeSlider As TrackBar
     Friend WithEvents Credits As TextBox
     Friend WithEvents summaryTextBox As TextBox
