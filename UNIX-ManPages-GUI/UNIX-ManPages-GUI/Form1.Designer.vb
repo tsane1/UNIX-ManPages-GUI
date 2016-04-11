@@ -22,13 +22,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mkdir")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ls")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cd")
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Directories", New System.Windows.Forms.TreeNode() {TreeNode8, TreeNode9, TreeNode10})
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mv")
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("scp")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Files", New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode13})
+        Dim TreeNode22 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mkdir")
+        Dim TreeNode23 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ls")
+        Dim TreeNode24 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cd")
+        Dim TreeNode25 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Directories", New System.Windows.Forms.TreeNode() {TreeNode22, TreeNode23, TreeNode24})
+        Dim TreeNode26 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mv")
+        Dim TreeNode27 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("scp")
+        Dim TreeNode28 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Files", New System.Windows.Forms.TreeNode() {TreeNode26, TreeNode27})
         Me.Title = New System.Windows.Forms.TextBox()
         Me.CmdDirectory = New System.Windows.Forms.TreeView()
         Me.searchText = New System.Windows.Forms.TextBox()
@@ -36,14 +36,16 @@ Partial Class Form1
         Me.CmdTextArea = New System.Windows.Forms.TabControl()
         Me.DescriptionTab = New System.Windows.Forms.TabPage()
         Me.backBtn2 = New System.Windows.Forms.Button()
-        Me.detailsTextBox = New System.Windows.Forms.TextBox()
+        Me.descriptionText = New System.Windows.Forms.TextBox()
         Me.cmdNameBox2 = New System.Windows.Forms.TextBox()
         Me.UsageTab = New System.Windows.Forms.TabPage()
         Me.backBtn = New System.Windows.Forms.Button()
-        Me.summaryTextBox = New System.Windows.Forms.TextBox()
+        Me.usageText = New System.Windows.Forms.TextBox()
         Me.cmdNameBox = New System.Windows.Forms.TextBox()
         Me.TextSizeSlider = New System.Windows.Forms.TrackBar()
         Me.Credits = New System.Windows.Forms.TextBox()
+        Me.synopsis = New System.Windows.Forms.TextBox()
+        Me.synopsis2 = New System.Windows.Forms.TextBox()
         Me.CmdTextArea.SuspendLayout()
         Me.DescriptionTab.SuspendLayout()
         Me.UsageTab.SuspendLayout()
@@ -71,21 +73,21 @@ Partial Class Form1
         Me.CmdDirectory.ForeColor = System.Drawing.Color.White
         Me.CmdDirectory.Location = New System.Drawing.Point(669, 8)
         Me.CmdDirectory.Name = "CmdDirectory"
-        TreeNode8.Name = "mkdirNode"
-        TreeNode8.Text = "mkdir"
-        TreeNode9.Name = "lsNode"
-        TreeNode9.Text = "ls"
-        TreeNode10.Name = "cdNode"
-        TreeNode10.Text = "cd"
-        TreeNode11.Name = "DirectoriesNode"
-        TreeNode11.Text = "Directories"
-        TreeNode12.Name = "mvNode"
-        TreeNode12.Text = "mv"
-        TreeNode13.Name = "scpNode"
-        TreeNode13.Text = "scp"
-        TreeNode14.Name = "FilesNode"
-        TreeNode14.Text = "Files"
-        Me.CmdDirectory.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode11, TreeNode14})
+        TreeNode22.Name = "mkdirNode"
+        TreeNode22.Text = "mkdir"
+        TreeNode23.Name = "lsNode"
+        TreeNode23.Text = "ls"
+        TreeNode24.Name = "cdNode"
+        TreeNode24.Text = "cd"
+        TreeNode25.Name = "DirectoriesNode"
+        TreeNode25.Text = "Directories"
+        TreeNode26.Name = "mvNode"
+        TreeNode26.Text = "mv"
+        TreeNode27.Name = "scpNode"
+        TreeNode27.Text = "scp"
+        TreeNode28.Name = "FilesNode"
+        TreeNode28.Text = "Files"
+        Me.CmdDirectory.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode25, TreeNode28})
         Me.CmdDirectory.Size = New System.Drawing.Size(251, 629)
         Me.CmdDirectory.TabIndex = 1
         '
@@ -124,8 +126,9 @@ Partial Class Form1
         '
         'DescriptionTab
         '
+        Me.DescriptionTab.Controls.Add(Me.synopsis)
         Me.DescriptionTab.Controls.Add(Me.backBtn2)
-        Me.DescriptionTab.Controls.Add(Me.detailsTextBox)
+        Me.DescriptionTab.Controls.Add(Me.descriptionText)
         Me.DescriptionTab.Controls.Add(Me.cmdNameBox2)
         Me.DescriptionTab.Location = New System.Drawing.Point(4, 4)
         Me.DescriptionTab.Name = "DescriptionTab"
@@ -147,29 +150,30 @@ Partial Class Form1
         Me.backBtn2.Text = "< Back"
         Me.backBtn2.UseVisualStyleBackColor = False
         '
-        'detailsTextBox
+        'descriptionText
         '
-        Me.detailsTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.detailsTextBox.Location = New System.Drawing.Point(0, 43)
-        Me.detailsTextBox.Multiline = True
-        Me.detailsTextBox.Name = "detailsTextBox"
-        Me.detailsTextBox.Size = New System.Drawing.Size(643, 474)
-        Me.detailsTextBox.TabIndex = 8
-        Me.detailsTextBox.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.descriptionText.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.descriptionText.Location = New System.Drawing.Point(0, 115)
+        Me.descriptionText.Multiline = True
+        Me.descriptionText.Name = "descriptionText"
+        Me.descriptionText.Size = New System.Drawing.Size(643, 402)
+        Me.descriptionText.TabIndex = 8
+        Me.descriptionText.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'cmdNameBox2
         '
         Me.cmdNameBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.cmdNameBox2.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNameBox2.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdNameBox2.Location = New System.Drawing.Point(6, 3)
         Me.cmdNameBox2.Name = "cmdNameBox2"
-        Me.cmdNameBox2.Size = New System.Drawing.Size(538, 32)
+        Me.cmdNameBox2.Size = New System.Drawing.Size(538, 35)
         Me.cmdNameBox2.TabIndex = 7
         '
         'UsageTab
         '
+        Me.UsageTab.Controls.Add(Me.synopsis2)
         Me.UsageTab.Controls.Add(Me.backBtn)
-        Me.UsageTab.Controls.Add(Me.summaryTextBox)
+        Me.UsageTab.Controls.Add(Me.usageText)
         Me.UsageTab.Controls.Add(Me.cmdNameBox)
         Me.UsageTab.Location = New System.Drawing.Point(4, 4)
         Me.UsageTab.Name = "UsageTab"
@@ -184,30 +188,30 @@ Partial Class Form1
         Me.backBtn.BackColor = System.Drawing.Color.White
         Me.backBtn.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.backBtn.ForeColor = System.Drawing.Color.Black
-        Me.backBtn.Location = New System.Drawing.Point(550, 10)
+        Me.backBtn.Location = New System.Drawing.Point(550, 7)
         Me.backBtn.Name = "backBtn"
         Me.backBtn.Size = New System.Drawing.Size(76, 28)
         Me.backBtn.TabIndex = 6
         Me.backBtn.Text = "< Back"
         Me.backBtn.UseVisualStyleBackColor = False
         '
-        'summaryTextBox
+        'usageText
         '
-        Me.summaryTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.summaryTextBox.Location = New System.Drawing.Point(0, 46)
-        Me.summaryTextBox.Multiline = True
-        Me.summaryTextBox.Name = "summaryTextBox"
-        Me.summaryTextBox.Size = New System.Drawing.Size(643, 474)
-        Me.summaryTextBox.TabIndex = 1
-        Me.summaryTextBox.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.usageText.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usageText.Location = New System.Drawing.Point(0, 115)
+        Me.usageText.Multiline = True
+        Me.usageText.Name = "usageText"
+        Me.usageText.Size = New System.Drawing.Size(643, 402)
+        Me.usageText.TabIndex = 1
+        Me.usageText.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'cmdNameBox
         '
         Me.cmdNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.cmdNameBox.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNameBox.Location = New System.Drawing.Point(6, 6)
+        Me.cmdNameBox.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdNameBox.Location = New System.Drawing.Point(6, 3)
         Me.cmdNameBox.Name = "cmdNameBox"
-        Me.cmdNameBox.Size = New System.Drawing.Size(538, 32)
+        Me.cmdNameBox.Size = New System.Drawing.Size(538, 35)
         Me.cmdNameBox.TabIndex = 0
         '
         'TextSizeSlider
@@ -231,6 +235,26 @@ Partial Class Form1
         Me.Credits.Size = New System.Drawing.Size(176, 30)
         Me.Credits.TabIndex = 5
         Me.Credits.Text = "(c) 2016 Tanuj Sane" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'synopsis
+        '
+        Me.synopsis.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.synopsis.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.synopsis.Location = New System.Drawing.Point(4, 45)
+        Me.synopsis.Multiline = True
+        Me.synopsis.Name = "synopsis"
+        Me.synopsis.Size = New System.Drawing.Size(638, 70)
+        Me.synopsis.TabIndex = 10
+        '
+        'synopsis2
+        '
+        Me.synopsis2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.synopsis2.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.synopsis2.Location = New System.Drawing.Point(4, 45)
+        Me.synopsis2.Multiline = True
+        Me.synopsis2.Name = "synopsis2"
+        Me.synopsis2.Size = New System.Drawing.Size(638, 70)
+        Me.synopsis2.TabIndex = 11
         '
         'Form1
         '
@@ -267,10 +291,12 @@ Partial Class Form1
     Friend WithEvents DescriptionTab As TabPage
     Friend WithEvents TextSizeSlider As TrackBar
     Friend WithEvents Credits As TextBox
-    Friend WithEvents summaryTextBox As TextBox
+    Friend WithEvents usageText As TextBox
     Friend WithEvents cmdNameBox As TextBox
     Friend WithEvents backBtn As Button
     Friend WithEvents backBtn2 As Button
-    Friend WithEvents detailsTextBox As TextBox
+    Friend WithEvents descriptionText As TextBox
     Friend WithEvents cmdNameBox2 As TextBox
+    Friend WithEvents synopsis As TextBox
+    Friend WithEvents synopsis2 As TextBox
 End Class
