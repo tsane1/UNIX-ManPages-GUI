@@ -23,33 +23,32 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mkdir")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("ls")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cd")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Directories", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mv")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("scp")
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Files", New System.Windows.Forms.TreeNode() {TreeNode5, TreeNode6})
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cd")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Directories", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("mv")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cp")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("cat")
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Files", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5, TreeNode6})
         Me.Title = New System.Windows.Forms.TextBox()
         Me.CmdDirectory = New System.Windows.Forms.TreeView()
         Me.searchText = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.CmdTextArea = New System.Windows.Forms.TabControl()
         Me.DescriptionTab = New System.Windows.Forms.TabPage()
-        Me.synopsis = New System.Windows.Forms.RichTextBox()
         Me.descriptionTextBox = New System.Windows.Forms.RichTextBox()
-        Me.backBtn2 = New System.Windows.Forms.Button()
-        Me.cmdNameBox2 = New System.Windows.Forms.TextBox()
         Me.UsageTab = New System.Windows.Forms.TabPage()
-        Me.synopsis2 = New System.Windows.Forms.RichTextBox()
         Me.usageTextBox = New System.Windows.Forms.RichTextBox()
-        Me.backBtn = New System.Windows.Forms.Button()
-        Me.cmdNameBox = New System.Windows.Forms.TextBox()
         Me.TextSizeSlider = New System.Windows.Forms.TrackBar()
         Me.Credits = New System.Windows.Forms.TextBox()
+        Me.CommonPanel = New System.Windows.Forms.Panel()
+        Me.SynopsisTextBox = New System.Windows.Forms.RichTextBox()
+        Me.CmdTitle = New System.Windows.Forms.RichTextBox()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.CmdTextArea.SuspendLayout()
         Me.DescriptionTab.SuspendLayout()
         Me.UsageTab.SuspendLayout()
         CType(Me.TextSizeSlider, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CommonPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Title
@@ -75,19 +74,19 @@ Partial Class Form1
         Me.CmdDirectory.Name = "CmdDirectory"
         TreeNode1.Name = "mkdirNode"
         TreeNode1.Text = "mkdir"
-        TreeNode2.Name = "lsNode"
-        TreeNode2.Text = "ls"
-        TreeNode3.Name = "cdNode"
-        TreeNode3.Text = "cd"
-        TreeNode4.Name = "DirectoriesNode"
-        TreeNode4.Text = "Directories"
-        TreeNode5.Name = "mvNode"
-        TreeNode5.Text = "mv"
-        TreeNode6.Name = "scpNode"
-        TreeNode6.Text = "scp"
-        TreeNode7.Name = "FilesNode"
+        TreeNode2.Name = "cdNode"
+        TreeNode2.Text = "cd"
+        TreeNode3.Name = "DirectoriesRoot"
+        TreeNode3.Text = "Directories"
+        TreeNode4.Name = "mvNode"
+        TreeNode4.Text = "mv"
+        TreeNode5.Name = "cpNode"
+        TreeNode5.Text = "cp"
+        TreeNode6.Name = "catNode"
+        TreeNode6.Text = "cat"
+        TreeNode7.Name = "FilesRoot"
         TreeNode7.Text = "Files"
-        Me.CmdDirectory.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode7})
+        Me.CmdDirectory.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode7})
         Me.CmdDirectory.Size = New System.Drawing.Size(251, 629)
         Me.CmdDirectory.TabIndex = 1
         '
@@ -116,127 +115,61 @@ Partial Class Form1
         Me.CmdTextArea.Controls.Add(Me.DescriptionTab)
         Me.CmdTextArea.Controls.Add(Me.UsageTab)
         Me.CmdTextArea.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmdTextArea.Location = New System.Drawing.Point(12, 93)
+        Me.CmdTextArea.Location = New System.Drawing.Point(12, 284)
         Me.CmdTextArea.Multiline = True
         Me.CmdTextArea.Name = "CmdTextArea"
         Me.CmdTextArea.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CmdTextArea.SelectedIndex = 0
-        Me.CmdTextArea.Size = New System.Drawing.Size(845, 548)
+        Me.CmdTextArea.Size = New System.Drawing.Size(845, 357)
         Me.CmdTextArea.TabIndex = 4
         '
         'DescriptionTab
         '
-        Me.DescriptionTab.Controls.Add(Me.synopsis)
         Me.DescriptionTab.Controls.Add(Me.descriptionTextBox)
-        Me.DescriptionTab.Controls.Add(Me.backBtn2)
-        Me.DescriptionTab.Controls.Add(Me.cmdNameBox2)
         Me.DescriptionTab.Location = New System.Drawing.Point(4, 4)
         Me.DescriptionTab.Name = "DescriptionTab"
         Me.DescriptionTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.DescriptionTab.Size = New System.Drawing.Size(837, 520)
+        Me.DescriptionTab.Size = New System.Drawing.Size(837, 329)
         Me.DescriptionTab.TabIndex = 1
         Me.DescriptionTab.Text = "Description"
         Me.DescriptionTab.UseVisualStyleBackColor = True
         '
-        'synopsis
-        '
-        Me.synopsis.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.synopsis.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.synopsis.Location = New System.Drawing.Point(4, 45)
-        Me.synopsis.Name = "synopsis"
-        Me.synopsis.Size = New System.Drawing.Size(833, 70)
-        Me.synopsis.TabIndex = 12
-        Me.synopsis.Text = ""
-        '
         'descriptionTextBox
         '
+        Me.descriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.descriptionTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.descriptionTextBox.Location = New System.Drawing.Point(0, 115)
+        Me.descriptionTextBox.Location = New System.Drawing.Point(13, -4)
         Me.descriptionTextBox.Name = "descriptionTextBox"
-        Me.descriptionTextBox.Size = New System.Drawing.Size(837, 402)
+        Me.descriptionTextBox.Size = New System.Drawing.Size(828, 374)
         Me.descriptionTextBox.TabIndex = 11
         Me.descriptionTextBox.Text = ""
         '
-        'backBtn2
-        '
-        Me.backBtn2.BackColor = System.Drawing.Color.White
-        Me.backBtn2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.backBtn2.ForeColor = System.Drawing.Color.Black
-        Me.backBtn2.Location = New System.Drawing.Point(755, 3)
-        Me.backBtn2.Name = "backBtn2"
-        Me.backBtn2.Size = New System.Drawing.Size(76, 28)
-        Me.backBtn2.TabIndex = 9
-        Me.backBtn2.Text = "< Back"
-        Me.backBtn2.UseVisualStyleBackColor = False
-        '
-        'cmdNameBox2
-        '
-        Me.cmdNameBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.cmdNameBox2.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNameBox2.Location = New System.Drawing.Point(6, 3)
-        Me.cmdNameBox2.Name = "cmdNameBox2"
-        Me.cmdNameBox2.Size = New System.Drawing.Size(743, 35)
-        Me.cmdNameBox2.TabIndex = 7
-        '
         'UsageTab
         '
-        Me.UsageTab.Controls.Add(Me.synopsis2)
         Me.UsageTab.Controls.Add(Me.usageTextBox)
-        Me.UsageTab.Controls.Add(Me.backBtn)
-        Me.UsageTab.Controls.Add(Me.cmdNameBox)
         Me.UsageTab.Location = New System.Drawing.Point(4, 4)
         Me.UsageTab.Name = "UsageTab"
         Me.UsageTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.UsageTab.Size = New System.Drawing.Size(837, 520)
+        Me.UsageTab.Size = New System.Drawing.Size(837, 329)
         Me.UsageTab.TabIndex = 0
         Me.UsageTab.Text = "Usage"
         Me.UsageTab.UseVisualStyleBackColor = True
         '
-        'synopsis2
-        '
-        Me.synopsis2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.synopsis2.Font = New System.Drawing.Font("Times New Roman", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.synopsis2.Location = New System.Drawing.Point(4, 45)
-        Me.synopsis2.Name = "synopsis2"
-        Me.synopsis2.Size = New System.Drawing.Size(833, 70)
-        Me.synopsis2.TabIndex = 13
-        Me.synopsis2.Text = ""
-        '
         'usageTextBox
         '
+        Me.usageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.usageTextBox.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usageTextBox.Location = New System.Drawing.Point(0, 115)
+        Me.usageTextBox.Location = New System.Drawing.Point(13, -4)
         Me.usageTextBox.Name = "usageTextBox"
-        Me.usageTextBox.Size = New System.Drawing.Size(837, 402)
+        Me.usageTextBox.Size = New System.Drawing.Size(828, 374)
         Me.usageTextBox.TabIndex = 12
         Me.usageTextBox.Text = ""
         '
-        'backBtn
-        '
-        Me.backBtn.BackColor = System.Drawing.Color.White
-        Me.backBtn.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.backBtn.ForeColor = System.Drawing.Color.Black
-        Me.backBtn.Location = New System.Drawing.Point(755, 3)
-        Me.backBtn.Name = "backBtn"
-        Me.backBtn.Size = New System.Drawing.Size(76, 28)
-        Me.backBtn.TabIndex = 6
-        Me.backBtn.Text = "< Back"
-        Me.backBtn.UseVisualStyleBackColor = False
-        '
-        'cmdNameBox
-        '
-        Me.cmdNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.cmdNameBox.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdNameBox.Location = New System.Drawing.Point(6, 3)
-        Me.cmdNameBox.Name = "cmdNameBox"
-        Me.cmdNameBox.Size = New System.Drawing.Size(743, 35)
-        Me.cmdNameBox.TabIndex = 0
-        '
         'TextSizeSlider
         '
-        Me.TextSizeSlider.BackColor = System.Drawing.Color.Black
+        Me.TextSizeSlider.BackColor = System.Drawing.Color.White
         Me.TextSizeSlider.LargeChange = 2
-        Me.TextSizeSlider.Location = New System.Drawing.Point(424, 622)
+        Me.TextSizeSlider.Location = New System.Drawing.Point(639, 623)
         Me.TextSizeSlider.Maximum = 2
         Me.TextSizeSlider.Name = "TextSizeSlider"
         Me.TextSizeSlider.Size = New System.Drawing.Size(218, 56)
@@ -254,12 +187,57 @@ Partial Class Form1
         Me.Credits.TabIndex = 5
         Me.Credits.Text = "(c) 2016 Tanuj Sane" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
+        'CommonPanel
+        '
+        Me.CommonPanel.BackColor = System.Drawing.Color.White
+        Me.CommonPanel.Controls.Add(Me.SynopsisTextBox)
+        Me.CommonPanel.Controls.Add(Me.CmdTitle)
+        Me.CommonPanel.Controls.Add(Me.btnBack)
+        Me.CommonPanel.Location = New System.Drawing.Point(12, 87)
+        Me.CommonPanel.Name = "CommonPanel"
+        Me.CommonPanel.Size = New System.Drawing.Size(845, 191)
+        Me.CommonPanel.TabIndex = 6
+        '
+        'SynopsisTextBox
+        '
+        Me.SynopsisTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SynopsisTextBox.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SynopsisTextBox.Location = New System.Drawing.Point(17, 42)
+        Me.SynopsisTextBox.Name = "SynopsisTextBox"
+        Me.SynopsisTextBox.Size = New System.Drawing.Size(827, 146)
+        Me.SynopsisTextBox.TabIndex = 11
+        Me.SynopsisTextBox.Text = ""
+        '
+        'CmdTitle
+        '
+        Me.CmdTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CmdTitle.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmdTitle.Location = New System.Drawing.Point(17, 1)
+        Me.CmdTitle.Name = "CmdTitle"
+        Me.CmdTitle.Size = New System.Drawing.Size(748, 35)
+        Me.CmdTitle.TabIndex = 10
+        Me.CmdTitle.Text = ""
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.White
+        Me.btnBack.Enabled = False
+        Me.btnBack.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.Black
+        Me.btnBack.Location = New System.Drawing.Point(765, 3)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(76, 28)
+        Me.btnBack.TabIndex = 7
+        Me.btnBack.Text = "< Back"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1126, 653)
+        Me.Controls.Add(Me.CommonPanel)
         Me.Controls.Add(Me.Credits)
         Me.Controls.Add(Me.TextSizeSlider)
         Me.Controls.Add(Me.CmdTextArea)
@@ -271,10 +249,9 @@ Partial Class Form1
         Me.Text = "UNIX Man Pages"
         Me.CmdTextArea.ResumeLayout(False)
         Me.DescriptionTab.ResumeLayout(False)
-        Me.DescriptionTab.PerformLayout()
         Me.UsageTab.ResumeLayout(False)
-        Me.UsageTab.PerformLayout()
         CType(Me.TextSizeSlider, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CommonPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -289,12 +266,10 @@ Partial Class Form1
     Friend WithEvents DescriptionTab As TabPage
     Friend WithEvents TextSizeSlider As TrackBar
     Friend WithEvents Credits As TextBox
-    Friend WithEvents cmdNameBox As TextBox
-    Friend WithEvents backBtn As Button
-    Friend WithEvents backBtn2 As Button
-    Friend WithEvents cmdNameBox2 As TextBox
     Friend WithEvents descriptionTextBox As RichTextBox
     Friend WithEvents usageTextBox As RichTextBox
-    Friend WithEvents synopsis As RichTextBox
-    Friend WithEvents synopsis2 As RichTextBox
+    Friend WithEvents CommonPanel As Panel
+    Friend WithEvents btnBack As Button
+    Friend WithEvents SynopsisTextBox As RichTextBox
+    Friend WithEvents CmdTitle As RichTextBox
 End Class
