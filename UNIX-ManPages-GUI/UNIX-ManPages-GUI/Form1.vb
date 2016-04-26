@@ -18,6 +18,7 @@ Public Class Form1
             loopCounter = loopCounter + 1
             If (loopCounter = 10000) Then 'loop counter to avoid endless cycling (a bit hacky but I waited last minute so oops)
                 CmdTitle.Text = "Error 404: Not Found"
+                SynopsisTextBox.Text = "Command " + targetCmd + " was not found :("
                 Exit Do
             End If
         Loop Until (reader.MoveToAttribute("name") And reader.Value Like targetCmd)
@@ -52,7 +53,7 @@ Public Class Form1
                         focus.Text &= Environment.NewLine
 
                         focus.Select(focus.Find(reader.Value), reader.Value.Length)
-                        focus.SelectionFont = New Font(focus.Font, FontStyle.Bold)
+                        focus.SelectionFont = New Font(focus.Font, FontStyle.Regular)
                     End If
                 Case "p"
                     If reader.NodeType = XmlNodeType.Element Then
@@ -61,7 +62,7 @@ Public Class Form1
                         focus.Text &= Environment.NewLine
 
                         focus.Select(focus.Find(reader.Value), reader.Value.Length)
-                        focus.SelectionFont = New Font(focus.Font, FontStyle.Italic)
+                        focus.SelectionFont = New Font(focus.Font, FontStyle.Regular)
                     End If
             End Select
         Loop Until (reader.NodeType = XmlNodeType.EndElement And reader.Name Like "cmd")
@@ -87,8 +88,8 @@ Public Class Form1
     End Sub
 
     Private Sub TextSizeSlider_ValueChanged(sender As Object, e As EventArgs) Handles TextSizeSlider.ValueChanged
-        descriptionTextBox.Font = New Font(descriptionTextBox.Font.FontFamily, 16 + 8 * TextSizeSlider.Value, descriptionTextBox.Font.Style)
-        usageTextBox.Font = New Font(usageTextBox.Font.FontFamily, 16 + 8 * TextSizeSlider.Value, usageTextBox.Font.Style)
+        descriptionTextBox.Font = New Font(descriptionTextBox.Font.FontFamily, 16 + 4 * TextSizeSlider.Value, descriptionTextBox.Font.Style)
+        usageTextBox.Font = New Font(usageTextBox.Font.FontFamily, 16 + 4 * TextSizeSlider.Value, usageTextBox.Font.Style)
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
